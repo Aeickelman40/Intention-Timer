@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid black
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+header {
+  background-color: #46424D;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body {
+  background-color: #2B2733;
+  margin-top: 0px;
+  color: #CBC9CF;
+}
+
+section {
+  color: #FFF;
+  background-color: #46424D;
+  width: 60%;
+}
+
+.activity-category {
+  border: 1px solid #FFF;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+p {
+  margin: 0px;
+}
