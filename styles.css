@@ -1,12 +1,43 @@
+
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  border: 1px solid black
+  font-family: ‘Montserrat’, sans-serif;
+  /* border: 1px solid black; */
 }
 
+
 img {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
+}
+
+body {
+  background-color: #2B2733;
+  margin-top: 0px;
+  color: #CBC9CF;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 90px 100vh;
+  grid-template-areas:
+    "header header header header header header"
+    "main main main main aside aside";
+  height: 100vh;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+main {
+  grid-area: main;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  /* margin: 20px; */
+}
+
+aside {
+  grid-area: aside;
+  margin: 0px;
+  border-left: 5px solid #46424D;
+  padding: 0 0 0 20px;
 }
 
 header {
@@ -14,28 +45,95 @@ header {
   color: #FFF;
   text-transform: uppercase;
   text-align: center;
-}
-
-body {
-  background-color: #2B2733;
-  margin-top: 0px;
-  color: #CBC9CF;
+  grid-area: header;
 }
 
 section {
   color: #FFF;
   background-color: #46424D;
-  width: 60%;
+  width: 90%;
+  height: 75%;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+.container {
+  padding: 30px 80px;
 }
 
 .activity-category {
   border: 1px solid #FFF;
   display: inline-block;
-  width: 100px;
+  width: 175px;
+  height: 80px;
   text-align: center;
   padding: 5px 15px;
+  margin: 0;
+}
+
+.flex-activity {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
 }
 
 p {
-  margin: 0px;
+  margin: 10px;
+  text-align: center;
+
+}
+
+input {
+  background-color: #46424D;
+  color: #FFF;
+  border-bottom: 2px solid #CBC9CF;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 100%
+  /* border-collapse: collapse; */
+}
+
+
+.in-button {
+  margin: 0;
+}
+
+.accomplish {
+  display: block;
+  margin: 0 0 40px 0;
+}
+
+.seconds {
+  display: inline-block;
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  width: 50%;
+}
+
+.minutes {
+  width: 40%;
+}
+
+.start-button {
+  display: block;
+  float: right;
+  margin: 50px 0;
+  width: 175px;
+  height: 40px;
+  font-size: 23px;
+  border-radius: 5px;
+}
+
+.lower-menu {
+  margin: 75px 0;
+  width: 100%;
+}
+
+h2 {
+  margin-left: 20px;
 }

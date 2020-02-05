@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Intention Timer</title>
   <link href="styles.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1>Intention Timer</h1>
   </header>
-  <h2>New Activity</h2>
-  <section>
-    <h3>Select a category:</h3>
-    <section class="activity-category">
-      <img src="assets/study.svg" alt="study icon" />
-      <p>Study</p>
-    </section>
-    <section class="activity-category">
-      <img src="assets/meditate.svg" alt="meditate icon" />
-      <p>Meditate</p>
-    </section>
-    <section class="activity-category">
-      <img src="assets/exercise.svg" alt="exercise icon" />
-      <p>Exercise</p>
-    </section>
+  <main>
+    <h2>New Activity</h2>
     <section>
-      <form>
-        <label>
-          What would you like to accomplish during this time?
-          <input type="text" name="task" />
-        </label>
-        <label>
-          Minutes
-          <input type="text" name="minutes" />
-        </label>
-        <label>
-          Seconds
-          <input type="text" name="seconds" />
-        </label>
-        <button class="">Start Activity</button>
-      </form>
+      <div class="container">
+        <h3>Select a category:</h3>
+        <section class="flex-activity">
+          <section class="activity-category">
+            <img src="assets/study.svg" alt="study icon" />
+            <h3 class="in-button">Study</h3>
+          </section>
+          <section class="activity-category">
+            <img src="assets/meditate.svg" alt="meditate icon" />
+            <h3 class="in-button">Meditate</h3>
+          </section>
+          <section class="activity-category">
+            <img src="assets/exercise.svg" alt="exercise icon" />
+            <h3 class="in-button">Exercise</h3>
+          </section>
+        </section>
+
+        <section class="lower-menu">
+          <form>
+            <label class="accomplish">
+              <h3>What would you like to accomplish during this time?</h3>
+              <input type="text" name="task" />
+            </label>
+            <label class="time minutes">
+              <h3>Minutes</h3>
+              <input type="number" name="minutes" />
+            </label>
+            <label class=" time seconds">
+              <h3>Seconds</h3>
+              <input type="number" name="seconds" />
+            </label>
+          </form>
+          <button class="start-button">
+            Start Activity
+          </button>
+        </section>
+      </div>
     </section>
-  </section>
+  </main>
   <aside>
     <h2>Past Activities</h2>
     <p>You haven't logged any activities yet.</p>
     <p>Complete the form to the left to get started!</p>
   </aside>
 </body>
+
 </html>
