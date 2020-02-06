@@ -1,10 +1,8 @@
-
 * {
   box-sizing: border-box;
   font-family: ‘Montserrat’, sans-serif;
   /* border: 1px solid black; */
 }
-
 
 img {
   width: 35px;
@@ -69,7 +67,14 @@ section {
   text-align: center;
   padding: 5px 15px;
   margin: 0;
+  background: transparent;
+  color: #FFF;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
+
 
 .flex-activity {
   display: flex;
@@ -81,7 +86,6 @@ section {
 p {
   margin: 10px;
   text-align: center;
-
 }
 
 input {
@@ -91,10 +95,11 @@ input {
   border-top: none;
   border-right: none;
   border-left: none;
-  width: 100%
-  /* border-collapse: collapse; */
+  width: 100%;
+  border-collapse: collapse;
+  outline: none;
+  font-size: 20px;
 }
-
 
 .in-button {
   margin: 0;
@@ -123,10 +128,12 @@ input {
   display: block;
   float: right;
   margin: 50px 0;
-  width: 175px;
   height: 40px;
   font-size: 23px;
   border-radius: 5px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
 }
 
 .lower-menu {
@@ -136,4 +143,56 @@ input {
 
 h2 {
   margin-left: 20px;
+}
+
+.study-active {
+  color: #B3FD78;
+  border: 1px solid #B3FD78;
+  display: inline-block;
+  width: 175px;
+  height: 80px;
+  text-align: center;
+  padding: 5px 15px;
+  margin: 0;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.meditate-active {
+  color: #C278FD;
+  border: 1px solid #C278FD;
+  display: inline-block;
+  width: 175px;
+  height: 80px;
+  text-align: center;
+  padding: 5px 15px;
+  margin: 0;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.exercise-active {
+  color: #FD8078;
+  border: 1px solid #FD8078;
+  display: inline-block;
+  width: 175px;
+  height: 80px;
+  text-align: center;
+  padding: 5px 15px;
+  margin: 0;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button {
+
 }
