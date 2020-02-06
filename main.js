@@ -1,6 +1,9 @@
 var buttonStudy = document.querySelector('.study');
 var buttonMeditate = document.querySelector('.meditate');
 var buttonExercise = document.querySelector('.exercise');
+var buttonStartActivity = document.querySelector('.start-button');
+var newActivityPage = document.querySelector('.new-activity-page');
+var currentActivityPage = document.querySelector('.current-activity-page');
 var studyImage = document.getElementById('white-study');
 var meditateImage = document.getElementById('white-meditate');
 var exerciseImage = document.getElementById('white-exercise');
@@ -8,6 +11,7 @@ var exerciseImage = document.getElementById('white-exercise');
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
 buttonExercise.addEventListener('click', exerciseClick);
+buttonStartActivity.addEventListener('click', startActivityClick);
 
 function studyClick() {
   buttonStudy.classList.add('study-active');
@@ -43,4 +47,10 @@ function exerciseClick() {
   meditateImage.src = "assets/meditate.svg";
   studyImage.src = "assets/study.svg";
   exerciseImage.src = "assets/exercise-active.svg";
+}
+
+function startActivityClick() {
+  buttonStartActivity.classList.add('hide');
+  newActivityPage.classList.add('hide');
+  currentActivityPage.classList.remove('hide');
 }
