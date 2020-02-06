@@ -31,6 +31,22 @@ main {
   /* margin: 20px; */
 }
 
+.new-activity-page {
+  grid-area: main;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.current-activity-page {
+  grid-area: main;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.hide {
+  display: none;
+}
+
 aside {
   grid-area: aside;
   margin: 0px;
@@ -193,6 +209,10 @@ h2 {
   border-radius: 5px;
 }
 
-button {
-
+.timer-button {
+  border: 1px solid #FD8078;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: transparent;
 }
