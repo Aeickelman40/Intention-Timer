@@ -17,20 +17,19 @@
       <div class="container">
         <h3>Select a category:</h3>
         <section class="flex-activity">
-          <section class="activity-category">
-            <img src="assets/study.svg" alt="study icon" />
+          <button class="activity-category study" type="button" name="button" onclick="document.getElementById('whiteStudy').src='assets/study-active.svg'">
+            <img src="assets/study.svg" alt="study icon" id="whiteStudy" />
             <h3 class="in-button">Study</h3>
-          </section>
-          <section class="activity-category">
-            <img src="assets/meditate.svg" alt="meditate icon" />
-            <h3 class="in-button">Meditate</h3>
-          </section>
-          <section class="activity-category">
-            <img src="assets/exercise.svg" alt="exercise icon" />
+          </button>
+          <button class="activity-category meditate" type="button" name="button" onclick="document.getElementById('whiteMeditate').src='assets/meditate-active.svg'">
+            <img class="meditate-image" src="assets/meditate.svg" alt="meditate icon" id="whiteMeditate" />
+            <h3 class="in-button meditate-text">Meditate</h3>
+          </button>
+          <button class="activity-category exercise" type="button" name="button" onclick="document.getElementById('whiteExercise').src='assets/exercise-active.svg'">
+            <img src="assets/exercise.svg" alt="exercise icon" id="whiteExercise" />
             <h3 class="in-button">Exercise</h3>
-          </section>
+          </button>
         </section>
-
         <section class="lower-menu">
           <form>
             <label class="accomplish">
@@ -39,11 +38,13 @@
             </label>
             <label class="time minutes">
               <h3>Minutes</h3>
-              <input type="number" name="minutes" />
+              <input type="number" min="0" name="minutes" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
             </label>
             <label class=" time seconds">
               <h3>Seconds</h3>
-              <input type="number" name="seconds" />
+              <input type="number" min="0" name="seconds" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
             </label>
           </form>
           <button class="start-button">
@@ -59,5 +60,7 @@
     <p>Complete the form to the left to get started!</p>
   </aside>
 </body>
+
+<script src="main.js"></script>
 
 </html>
