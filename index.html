@@ -34,17 +34,15 @@
           <form>
             <label class="accomplish">
               <h3>What would you like to accomplish during this time?</h3>
-              <input type="text" name="task" />
+              <input class="accomplish-input" type="text" />
             </label>
             <label class="time minutes">
               <h3>Minutes</h3>
-              <input type="number" min="0" name="minutes" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
-              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
+              <input class="minute-input" type="number" min="0" name="minutes" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
             </label>
-            <label class=" time seconds">
+            <label class="time seconds">
               <h3>Seconds</h3>
-              <input type="number" min="0" name="seconds" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
-              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
+              <input class="second-input" type="number" min="0" name="seconds" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
             </label>
           </form>
           <button class="start-button">
@@ -59,9 +57,11 @@
     <h2>Current Activity</h2>
     <section>
       <div class="container">
-        <h2 class="action">Deep Breathing</h2>
-        <p>Time</p>
+        <p class="accomplish-output"></p>
+        <p class="minute-input"></p>
+        <p class="second-input"></p>
         <button class="timer-button">Start</button>
+
     </section>
     </div>
   </main>
