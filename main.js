@@ -14,6 +14,11 @@ var secondsInput = document.querySelector('.seconds-input');
 var accomplishErrorMessage = document.getElementById('accomplish-error-message');
 var minutesErrorMessage = document.getElementById('minutes-error-message');
 var secondsErrorMessage = document.getElementById('seconds-error-message');
+var minutesOutput = document.querySelector('.minutes-output')
+var secondsOuput = document.querySelector('.seconds-output')
+var accomplishOutput = document.querySelector('.accomplish-output');
+var accomplishButton = document.querySelector('.start-button');
+
 
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
@@ -21,6 +26,8 @@ buttonExercise.addEventListener('click', exerciseClick);
 buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
+accomplishButton.addEventListener('click', toCurrentActivity);
+
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -72,6 +79,12 @@ function showErrorMessage(input, error) {
   }
 }
 
+function toCurrentActivity(){
+//   accomplishOutput.innerText = accomplishInput.value;
+  console.log('hi')
+  minuteOutput.innerText = minuteInput.value;
+  secondOutput.innerText = secondInput.value;
+}
 
 function startActivityClick() {
   // buttonStartActivity.classList.add('hide');

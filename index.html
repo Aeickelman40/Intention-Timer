@@ -34,15 +34,15 @@
           <form>
             <label class="accomplish">
               <h3>What would you like to accomplish during this time?</h3>
-              <input class="accomplish-input" type="text" name="task" />
-              <p class="warning-message" id="accomplish-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A description is required</p>
+               <input class="accomplish-input" type="text" />
+                <p class="warning-message" id="accomplish-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A description is required</p>
             </label>
-            <label class="time minutes">
+             <label class="time minutes">
               <h3>Minutes</h3>
               <input class="minutes-input" type="number" min="0" name="minutes" />
               <p class="warning-message" id="minutes-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A time is required</p>
             </label>
-            <label class=" time seconds">
+            <label class="time seconds">
               <h3>Seconds</h3>
               <input class="seconds-input" type="number" min="0" name="seconds" />
               <p class="warning-message" id="seconds-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A time is required</p>
@@ -60,9 +60,11 @@
     <h2>Current Activity</h2>
     <section>
       <div class="container">
-        <h2 class="action">Deep Breathing</h2>
-        <p>Time</p>
+        <p class="accomplish-output"></p>
+        <p class="minute-input"></p>
+        <p class="second-input"></p>
         <button class="timer-button">Start</button>
+
     </section>
     </div>
   </main>
