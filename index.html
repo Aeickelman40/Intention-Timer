@@ -34,22 +34,26 @@
           <form>
             <label class="accomplish">
               <h3>What would you like to accomplish during this time?</h3>
-              <input type="text" name="task" />
+              <input class="accomplish-input" type="text" name="task" />
+              <p class="warning-message" id="accomplish-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A description is required</p>
             </label>
             <label class="time minutes">
               <h3>Minutes</h3>
-              <input type="number" min="0" name="minutes" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
-              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
+              <input class="minutes-input" type="number" min="0" name="minutes" />
+              <p class="warning-message" id="minutes-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A time is required</p>
             </label>
             <label class=" time seconds">
               <h3>Seconds</h3>
-              <input type="number" min="0" name="seconds" onkeydown="javascript: return event.keyCode == 69 ? false : true" />
-              <!--found the e removal command on stackoverflow. It works, but I'm unsure why-->
+              <input class="seconds-input" type="number" min="0" name="seconds" />
+              <p class="warning-message" id="seconds-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A time is required</p>
             </label>
+            <button class="start-button">
+              Start Activity
+            </button>
           </form>
-          <button class="start-button">
+          <!-- <button class="start-button">
             Start Activity
-          </button>
+          </button> -->
         </section>
       </div>
     </section>

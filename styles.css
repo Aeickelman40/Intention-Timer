@@ -216,3 +216,16 @@ h2 {
   border-radius: 50%;
   background: transparent;
 }
+
+.warning {
+  height: 16px;
+  margin-right: 1%;
+  margin-top: 1%;
+  width: 16px;
+}
+
+.warning-message {
+  color: #EFB7EC;
+  text-align: left;
+  visibility: hidden;
+}
