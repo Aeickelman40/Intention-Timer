@@ -64,17 +64,7 @@ function exerciseClick() {
   exerciseImage.src = "assets/exercise-active.svg";
 }
 
-function startActivityClick() {
-  // buttonStartActivity.classList.add('hide');
-  // newActivityPage.classList.add('hide');
-  // currentActivityPage.classList.remove('hide');
-  errorMessage(accomplishInput, accomplishErrorMessage);
-  errorMessage(minutesInput, minutesErrorMessage);
-  errorMessage(secondsInput, secondsErrorMessage);
-}
-
-
-function errorMessage(input, error) {
+function showErrorMessage(input, error) {
   if (input.value === "") {
     error.style.visibility = "visible";
   } else {
@@ -82,13 +72,12 @@ function errorMessage(input, error) {
   }
 }
 
-// startActivityClick.addEventListener('click', function() {
-//   if (question.value === '') {
-//     accomplishErrorMessage.classList.toggle('accomplish-error-message');
-//   }
-//   if (minutes.value === '') {
-//     minutesErrorMessage.classList.toggle('minutes-error-messages');
-//   }
-//   if (seconds.value === '') {
-//     secondsErrorMessag.classList.toggle('seconds-error-message');
-//   }
+
+function startActivityClick() {
+  // buttonStartActivity.classList.add('hide');
+  // newActivityPage.classList.add('hide');
+  // currentActivityPage.classList.remove('hide');
+  showErrorMessage(accomplishInput, accomplishErrorMessage);
+  showErrorMessage(minutesInput, minutesErrorMessage);
+  showErrorMessage(secondsInput, secondsErrorMessage);
+}
