@@ -102,6 +102,7 @@ section {
 p {
   margin: 10px;
   text-align: center;
+  display: inline-block
 }
 
 input {
@@ -210,9 +211,15 @@ h2 {
 }
 
 .timer-button {
-  border: 1px solid #FD8078;
+  border: 4px solid #FFF;
   height: 200px;
   width: 200px;
   border-radius: 50%;
   background: transparent;
+  color: #FFF;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  outline: none;
 }

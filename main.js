@@ -8,10 +8,25 @@ var studyImage = document.getElementById('white-study');
 var meditateImage = document.getElementById('white-meditate');
 var exerciseImage = document.getElementById('white-exercise');
 
+
+
+
+
+
+
+
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
 buttonExercise.addEventListener('click', exerciseClick);
 buttonStartActivity.addEventListener('click', startActivityClick);
+
+
+
+
+
+
+
+
 
 function studyClick() {
   buttonStudy.classList.add('study-active');
@@ -47,6 +62,51 @@ function exerciseClick() {
   meditateImage.src = "assets/meditate.svg";
   studyImage.src = "assets/study.svg";
   exerciseImage.src = "assets/exercise-active.svg";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var accomplishInput = document.querySelector('.accomplish-input');
+var accomplishOutput = document.querySelector('.accomplish-output');
+var accomplishButton = document.querySelector('.start-button');
+var minuteInput = document.querySelector('.minute-input');
+var secondInput = document.querySelector('.second-input');
+var minuteOutput = document.querySelector('.minute-output')
+var secondOuput = document.querySelector('.second-output')
+
+
+accomplishButton.addEventListener('click', accomInOut);
+
+function accomInOut(){
+  accomplishOutput.innerText = accomplishInput.value;
+  console.log('hi')
+  minuteOutput.innerText = minuteInput.value;
+  secondOutput.innerText = secondInput.value;
+
 }
 
 function startActivityClick() {
