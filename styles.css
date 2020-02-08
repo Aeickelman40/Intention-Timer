@@ -223,3 +223,16 @@ h2 {
   justify-content: center;
   outline: none;
 }
+
+.warning {
+  height: 16px;
+  margin-right: 1%;
+  margin-top: 1%;
+  width: 16px;
+}
+
+.warning-message {
+  color: #EFB7EC;
+  text-align: left;
+  visibility: hidden;
+}
