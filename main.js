@@ -14,11 +14,13 @@ var secondsInput = document.querySelector('.seconds-input');
 var accomplishErrorMessage = document.getElementById('accomplish-error-message');
 var minutesErrorMessage = document.getElementById('minutes-error-message');
 var secondsErrorMessage = document.getElementById('seconds-error-message');
-var minutesOutput = document.querySelector('.minutes-output')
-var secondsOuput = document.querySelector('.seconds-output')
+var minutesOutput = document.querySelector('.minutes-output');
+var secondsOutput = document.querySelector('.seconds-output');
 var accomplishOutput = document.querySelector('.accomplish-output');
 var accomplishButton = document.querySelector('.start-button');
-
+var timerButton = document.querySelector('.timer-button');
+var studyTimer = document.querySelector('.study-timer');
+var meditateTimer = document.querySelector('.meditate-timer')
 
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
@@ -26,8 +28,9 @@ buttonExercise.addEventListener('click', exerciseClick);
 buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
-accomplishButton.addEventListener('click', toCurrentActivity);
-
+timerButton.addEventListener('click', addStudyTimer);
+timerButton.addEventListener('click', addMeditateTimer);
+timerButton.addEventListener('click', addExerciseTimer);
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -79,18 +82,39 @@ function showErrorMessage(input, error) {
   }
 }
 
-function toCurrentActivity(){
-//   accomplishOutput.innerText = accomplishInput.value;
-  console.log('hi')
-  minuteOutput.innerText = minuteInput.value;
-  secondOutput.innerText = secondInput.value;
-}
-
 function startActivityClick() {
-  // buttonStartActivity.classList.add('hide');
-  // newActivityPage.classList.add('hide');
-  // currentActivityPage.classList.remove('hide');
   showErrorMessage(accomplishInput, accomplishErrorMessage);
   showErrorMessage(minutesInput, minutesErrorMessage);
   showErrorMessage(secondsInput, secondsErrorMessage);
+  toNewPage();
+  displayCurrent();
+  addMeditateTimer();
+  addStudyTimer();
+
+}
+
+function addStudyTimer() {
+  timerButton.classList.remove('timer-button')
+  timerButton.classList.remove('meditate-timer')
+  timerButton.classList.remove('timer-button')
+  timerButton.classList.add('study-timer')
+}
+
+function addMeditateTimer() {
+  timerButton.classList.remove('timer-button')
+  timerButton.classList.remove('study-timer')
+  timerButton.classList.add('meditate-timer')
+}
+
+function displayCurrent() {
+  accomplishOutput.innerText = accomplishInput.value;
+  minutesOutput.innerText = minutesInput.value;
+  secondsOutput.innerText = secondsInput.value;
+}
+
+function toNewPage() {
+  if (accomplishInput.value && minutesInput.value && secondsInput.value) {
+    newActivityPage.classList.add('hide');
+    currentActivityPage.classList.remove('hide');
+  }
 }
