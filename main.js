@@ -20,7 +20,8 @@ var accomplishOutput = document.querySelector('.accomplish-output');
 var accomplishButton = document.querySelector('.start-button');
 var timerButton = document.querySelector('.timer-button');
 var studyTimer = document.querySelector('.study-timer');
-var meditateTimer = document.querySelector('.meditate-timer')
+var meditateTimer = document.querySelector('.meditate-timer');
+var categorySelected;
 
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
@@ -28,9 +29,6 @@ buttonExercise.addEventListener('click', exerciseClick);
 buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
-timerButton.addEventListener('click', addStudyTimer);
-timerButton.addEventListener('click', addMeditateTimer);
-timerButton.addEventListener('click', addExerciseTimer);
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -88,22 +86,26 @@ function startActivityClick() {
   showErrorMessage(secondsInput, secondsErrorMessage);
   toNewPage();
   displayCurrent();
-  addMeditateTimer();
-  addStudyTimer();
-
 }
 
-function addStudyTimer() {
-  timerButton.classList.remove('timer-button')
-  timerButton.classList.remove('meditate-timer')
-  timerButton.classList.remove('timer-button')
-  timerButton.classList.add('study-timer')
+var timer = document.querySelector('.timer-button');
+
+buttonStudy.onclick = function() {
+  categorySelected = 'study'
+  console.log(categorySelected)
+  timer.classList.add('study-timer')
 }
 
-function addMeditateTimer() {
-  timerButton.classList.remove('timer-button')
-  timerButton.classList.remove('study-timer')
-  timerButton.classList.add('meditate-timer')
+buttonMeditate.onclick = function() {
+  categorySelected = 'meditate'
+  console.log(categorySelected)
+  timer.classList.add('meditate-timer')
+}
+
+buttonExercise.onclick = function() {
+  categorySelected = 'exercise'
+  console.log(categorySelected)
+  timer.classList.add('exercise-timer')
 }
 
 function displayCurrent() {

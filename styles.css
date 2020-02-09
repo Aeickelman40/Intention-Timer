@@ -237,10 +237,6 @@ h2 {
   visibility: hidden;
 }
 
-.container-current-activity-page {
-  display: flex;
-}
-
 .study-timer {
   border: 4px solid #B3FD78;
   height: 200px;
@@ -267,4 +263,30 @@ h2 {
   justify-content: center;
   align-content: center;
   outline: none;
+}
+
+.exercise-timer {
+  border: 4px solid #FD8078;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: transparent;
+  color: #FFF;
+  font-size: 30px;
+  cursor: pointer;
+  justify-content: center;
+  align-content: center;
+  outline: none;
+}
+
+.flex-start-timer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accomplish-input-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }
