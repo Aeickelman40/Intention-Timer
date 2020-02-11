@@ -142,8 +142,19 @@ input {
 }
 
 .start-button {
-  display: block;
   float: right;
+  margin: 50px 0;
+  height: 40px;
+  font-size: 23px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+
+.log-button {
+  display: flex;
+  just-c
   margin: 50px 0;
   height: 40px;
   font-size: 23px;
@@ -239,8 +250,8 @@ h2 {
 
 .study-timer {
   border: 4px solid #B3FD78;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background: transparent;
   color: #FFF;
@@ -253,8 +264,8 @@ h2 {
 
 .meditate-timer {
   border: 4px solid #C278FD;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background: transparent;
   color: #FFF;
@@ -267,8 +278,8 @@ h2 {
 
 .exercise-timer {
   border: 4px solid #FD8078;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background: transparent;
   color: #FFF;
@@ -289,4 +300,16 @@ h2 {
   display: flex;
   justify-content: center;
   padding-top: 30px;
+}
+
+.running-time {
+  text-align: center;
+    display: inline-block;
+    margin: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.accomplish-output {
+  font-size: 25px
 }
