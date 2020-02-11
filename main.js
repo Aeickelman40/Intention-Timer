@@ -14,13 +14,11 @@ var secondsInput = document.querySelector('.seconds-input');
 var accomplishErrorMessage = document.getElementById('accomplish-error-message');
 var minutesErrorMessage = document.getElementById('minutes-error-message');
 var secondsErrorMessage = document.getElementById('seconds-error-message');
-var minutesOutput = document.querySelector('.minutes-output');
-var secondsOutput = document.querySelector('.seconds-output');
+var minutesOutput = document.getElementById('minutes-output');
+var secondsOutput = document.getElementById('seconds-output');
 var accomplishOutput = document.querySelector('.accomplish-output');
 var accomplishButton = document.querySelector('.start-button');
 var timerButton = document.querySelector('.timer-button');
-var studyTimer = document.querySelector('.study-timer');
-var meditateTimer = document.querySelector('.meditate-timer');
 var categorySelected;
 
 buttonStudy.addEventListener('click', studyClick);
@@ -29,6 +27,16 @@ buttonExercise.addEventListener('click', exerciseClick);
 buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
+timerButton.addEventListener('click', timerStart);
+
+
+
+
+
+
+
+
+
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -119,4 +127,22 @@ function toNewPage() {
     newActivityPage.classList.add('hide');
     currentActivityPage.classList.remove('hide');
   }
+}
+
+var minutes = Number(document.querySelector('.minutes-input').value);
+var sec = Number(document.querySelector('.seconds-input').value);
+var logButton = document.querySelector('.log-button');
+
+function timerStart(){
+    debugger
+    var seconds = (minutes*60) + sec;
+    var timer = setInterval(function(){
+      document.getElementById('seconds-output').innerHTML=seconds;
+        seconds--;
+        if (seconds < 0) {
+            clearInterval(timer);
+            document.querySelector('timer-button').innerHTML=logButton;
+            logButton.classList.remove('hide');
+        }
+    }, 1000);
 }

@@ -34,10 +34,10 @@
           <form>
             <label class="accomplish">
               <h3>What would you like to accomplish during this time?</h3>
-               <input class="accomplish-input" type="text" />
-                <p class="warning-message" id="accomplish-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A description is required</p>
+              <input class="accomplish-input" type="text" />
+              <p class="warning-message" id="accomplish-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A description is required</p>
             </label>
-             <label class="time minutes">
+            <label class="time minutes">
               <h3>Minutes</h3>
               <input class="minutes-input" type="number" min="0" name="minutes" />
               <p class="warning-message" id="minutes-error-message"><img class="warning" src="assets/warning.svg" alt="warning icon">A time is required</p>
@@ -56,18 +56,23 @@
     </section>
   </main>
   <main class="current-activity-page hide">
-
     <h2>Current Activity</h2>
     <section>
       <div class="container-current-activity-page">
-      <section class="accomplish-input-container">
-        <h3 class="accomplish-output"></h3>
-      </section>
-        <p class="minutes-output"></p>
-        <p class="seconds-output"></p>
-      <section class="flex-start-timer-button">
-        <button class="timer-button">Start</button>
-      </section>
+        <section class="accomplish-input-container">
+          <p class="accomplish-output"></p>
+        </section>
+        <section class="running-time">
+          <p id="minutes-output"></p>
+          <p id="seconds-output"></p>
+        </section>
+        <section class="flex-start-timer-button">
+          <input type="button" class="timer-button" value="Start">
+        </section>
+        <p id='done'></p>
+        <button class="log-button hide">
+          Log Activity
+        </button>
 
     </section>
     </div>
