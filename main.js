@@ -20,7 +20,9 @@ var accomplishOutput = document.querySelector('.accomplish-output');
 var accomplishButton = document.querySelector('.start-button');
 var timerButton = document.querySelector('.timer-button');
 var categorySelected;
+var categoryContainer = document.querySelector('.flex-activity');
 
+categoryContainer.addEventListener('click', activityClick);
 buttonStudy.addEventListener('click', studyClick);
 buttonMeditate.addEventListener('click', meditateClick);
 buttonExercise.addEventListener('click', exerciseClick);
@@ -29,14 +31,19 @@ secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 timerButton.addEventListener('click', timerStart);
 
-
-
-
-
-
-
-
-
+// attemp to refactor our activity click buttons
+function activityClick(event) {
+  if (event.target.classList.contains('study')) {
+    studyClick();
+  }
+  if (event.target.classList.contains('meditate')) {
+    meditateClick();
+  }
+  if (event.target.classList.contains('exercise')) {
+    exerciseClick();
+  }
+}
+//
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -122,27 +129,45 @@ function displayCurrent() {
   secondsOutput.innerText = secondsInput.value;
 }
 
+var minutes = 0;
+var seconds = 0;
+
 function toNewPage() {
   if (accomplishInput.value && minutesInput.value && secondsInput.value) {
+    minutes = Number(minutesInput.value);
+    seconds = Number(secondsInput.value);
     newActivityPage.classList.add('hide');
     currentActivityPage.classList.remove('hide');
   }
 }
 
-var minutes = Number(document.querySelector('.minutes-input').value);
-var sec = Number(document.querySelector('.seconds-input').value);
 var logButton = document.querySelector('.log-button');
 
-function timerStart(){
-    debugger
-    var seconds = (minutes*60) + sec;
-    var timer = setInterval(function(){
-      document.getElementById('seconds-output').innerHTML=seconds;
-        seconds--;
-        if (seconds < 0) {
-            clearInterval(timer);
-            document.querySelector('timer-button').innerHTML=logButton;
-            logButton.classList.remove('hide');
-        }
-    }, 1000);
+function timerStart() {
+  console.log(minutes, seconds);
+  console.log(typeof minutes, typeof seconds)
+  // var seconds = (minutes * 60) + sec;
+  function timer() {setTimeout(function() {
+
+    if (seconds > 0) {
+      seconds--;
+      secondsOutput.innerText = seconds;
+      minutesOutput.innerText = minutes;
+      return timer();
+    } else if (seconds === 0 && minutes > 0) {
+      minutes--;
+      seconds = 59;
+      secondsOutput.innerText = seconds;
+      minutesOutput.innerText = minutes;
+      return timer();
+    } else if (seconds === 0 && minutes === 0) {
+      clearInterval(timer);
+      console.log('over');
+    }
+
+    // document.querySelector('timer-button').innerHTML = logButton;
+    // logButton.classList.remove('hide');
+  }, 1000);
+}
+timer();
 }
