@@ -21,6 +21,7 @@ var accomplishButton = document.querySelector('.start-button');
 var timerButton = document.querySelector('.timer-button');
 var categorySelected;
 var categoryContainer = document.querySelector('.flex-activity');
+var logButton = document.querySelector('.log-button');
 
 categoryContainer.addEventListener('click', activityClick);
 buttonStudy.addEventListener('click', studyClick);
@@ -176,8 +177,10 @@ function timerStart() {
         return timer();
       } else if (seconds === 0 && minutes === 0) {
         clearInterval(timer);
-        console.log('over');
+        timerButton.value = 'COMPLETE!'
         window.alert('times up!')
+        logButton.classList.remove('hide');
+        console.log('over');
       }
     }, 1000);
   }
