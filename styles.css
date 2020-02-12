@@ -153,8 +153,6 @@ input {
 }
 
 .log-button {
-  display: flex;
-  just-c
   margin: 50px 0;
   height: 40px;
   font-size: 23px;
@@ -164,6 +162,10 @@ input {
   cursor: pointer;
 }
 
+.log-button-container {
+  display: flex;
+  justify-content: center;
+}
 .lower-menu {
   margin: 75px 0;
   width: 100%;
