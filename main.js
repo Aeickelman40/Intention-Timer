@@ -31,7 +31,7 @@ secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 timerButton.addEventListener('click', timerStart);
 
-// attemp to refactor our activity click buttons
+// attemp to refactor our activity click buttons. This is not our best work :)
 function activityClick(event) {
   if (event.target.classList.contains('study')) {
     studyClick();
@@ -123,14 +123,21 @@ buttonExercise.onclick = function() {
   timer.classList.add('exercise-timer')
 }
 
+var minutes = 0;
+var seconds = 0;
+
 function displayCurrent() {
   accomplishOutput.innerText = accomplishInput.value;
   minutesOutput.innerText = minutesInput.value;
+  if (minutes < 10) {
+    minutesOutput.innerText = '0' + minutes;
+  }
   secondsOutput.innerText = secondsInput.value;
+  if (seconds < 10) {
+    secondsOutput.innerText = '0' + seconds;
+  }
 }
 
-var minutes = 0;
-var seconds = 0;
 
 function toNewPage() {
   if (accomplishInput.value && minutesInput.value && secondsInput.value) {
@@ -144,9 +151,6 @@ function toNewPage() {
 var logButton = document.querySelector('.log-button');
 
 function timerStart() {
-  console.log(minutes, seconds);
-  console.log(typeof minutes, typeof seconds)
-  // var seconds = (minutes * 60) + sec;
   function timer() {
     setTimeout(function() {
 
@@ -166,15 +170,15 @@ function timerStart() {
         seconds = 59;
         secondsOutput.innerText = seconds;
         minutesOutput.innerText = minutes;
+        if (minutes < 10) {
+          minutesOutput.innerText = '0' + minutes;
+        }
         return timer();
       } else if (seconds === 0 && minutes === 0) {
         clearInterval(timer);
         console.log('over');
         window.alert('times up!')
       }
-
-      // document.querySelector('timer-button').innerHTML = logButton;
-      // logButton.classList.remove('hide');
     }, 1000);
   }
   timer();
