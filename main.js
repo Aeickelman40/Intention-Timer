@@ -147,27 +147,35 @@ function timerStart() {
   console.log(minutes, seconds);
   console.log(typeof minutes, typeof seconds)
   // var seconds = (minutes * 60) + sec;
-  function timer() {setTimeout(function() {
+  function timer() {
+    setTimeout(function() {
 
-    if (seconds > 0) {
-      seconds--;
-      secondsOutput.innerText = seconds;
-      minutesOutput.innerText = minutes;
-      return timer();
-    } else if (seconds === 0 && minutes > 0) {
-      minutes--;
-      seconds = 59;
-      secondsOutput.innerText = seconds;
-      minutesOutput.innerText = minutes;
-      return timer();
-    } else if (seconds === 0 && minutes === 0) {
-      clearInterval(timer);
-      console.log('over');
-    }
+      if (seconds > 0) {
+        seconds--;
+        secondsOutput.innerText = seconds;
+        minutesOutput.innerText = minutes;
+        if (seconds < 10) {
+          secondsOutput.innerText = '0' + seconds;
+        }
+        if (minutes < 10) {
+          minutesOutput.innerText = '0' + minutes;
+        }
+        return timer();
+      } else if (seconds === 0 && minutes > 0) {
+        minutes--;
+        seconds = 59;
+        secondsOutput.innerText = seconds;
+        minutesOutput.innerText = minutes;
+        return timer();
+      } else if (seconds === 0 && minutes === 0) {
+        clearInterval(timer);
+        console.log('over');
+        window.alert('times up!')
+      }
 
-    // document.querySelector('timer-button').innerHTML = logButton;
-    // logButton.classList.remove('hide');
-  }, 1000);
-}
-timer();
+      // document.querySelector('timer-button').innerHTML = logButton;
+      // logButton.classList.remove('hide');
+    }, 1000);
+  }
+  timer();
 }
