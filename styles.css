@@ -1,46 +1,56 @@
 * {
   box-sizing: border-box;
   font-family: ‘Montserrat’, sans-serif;
-  /* border: 1px solid black; */
 }
 
 img {
-  width: 35px;
   height: 35px;
+  width: 35px;
 }
 
 body {
   background-color: #2B2733;
-  margin-top: 0px;
   color: #CBC9CF;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 90px 100vh;
   grid-template-areas:
     "header header header header header header"
     "main main main main aside aside";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 90px 100vh;
   height: 100vh;
   margin-left: 0px;
   margin-right: 0px;
+  margin-top: 0px;
 }
 
-main {
+main,
+.new-activity-page,
+.current-activity-page,
+.completed-activity-page {
   grid-area: main;
-  grid-column-start: 1;
   grid-column-end: 5;
-  /* margin: 20px; */
+  grid-column-start: 1;
 }
 
-.new-activity-page {
-  grid-area: main;
-  grid-column-start: 1;
-  grid-column-end: 5;
+.create-new-activity-button {
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 23px;
+  height: 40px;
+  margin: 50px 0;
+  outline: none;
+  text-transform: uppercase;
+  width: 400px;
 }
 
-.current-activity-page {
-  grid-area: main;
-  grid-column-start: 1;
-  grid-column-end: 5;
+.create-new-activity-button-container,
+.log-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.log-button-container {
+  height: 20px;
 }
 
 .hide {
@@ -48,27 +58,31 @@ main {
 }
 
 aside {
+  border-left: 5px solid #46424D;
   grid-area: aside;
   margin: 0px;
-  border-left: 5px solid #46424D;
   padding: 0 0 0 20px;
+}
+
+.aside-text {
+  text-align: center;
 }
 
 header {
   background-color: #46424D;
   color: #FFF;
-  text-transform: uppercase;
-  text-align: center;
   grid-area: header;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 section {
-  color: #FFF;
   background-color: #46424D;
-  width: 90%;
+  border-radius: 5px;
+  color: #FFF;
   height: 75%;
   margin: 0 20px;
-  border-radius: 5px;
+  width: 90%;
 }
 
 .container {
@@ -76,46 +90,45 @@ section {
 }
 
 .activity-category {
-  border: 1px solid #FFF;
-  display: inline-block;
-  width: 175px;
-  height: 80px;
-  text-align: center;
-  padding: 5px 15px;
-  margin: 0;
   background: transparent;
-  color: #FFF;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
+  border: 1px solid #FFF;
   border-radius: 5px;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  height: 80px;
+  margin: 0;
+  outline: none;
+  padding: 5px 15px;
+  text-align: center;
+  width: 175px;
 }
-
 
 .flex-activity {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
 
 p {
+  display: inline-block;
   margin: 10px;
-  text-align: center;
-  display: inline-block
+  text-align: center
 }
 
 input {
   background-color: #46424D;
-  color: #FFF;
   border-bottom: 2px solid #CBC9CF;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  width: 100%;
   border-collapse: collapse;
-  outline: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #FFF;
   font-size: 20px;
+  outline: none;
+  width: 100%;
 }
 
 .in-button {
@@ -141,31 +154,21 @@ input {
   width: 40%;
 }
 
+.start-button,
+.log-button {
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 23px;
+  height: 40px;
+  margin: 50px 0;
+  outline: none;
+  text-transform: uppercase;
+}
+
 .start-button {
   float: right;
-  margin: 50px 0;
-  height: 40px;
-  font-size: 23px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  outline: none;
-  cursor: pointer;
 }
 
-.log-button {
-  margin: 50px 0;
-  height: 40px;
-  font-size: 23px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  outline: none;
-  cursor: pointer;
-}
-
-.log-button-container {
-  display: flex;
-  justify-content: center;
-}
 .lower-menu {
   margin: 75px 0;
   width: 100%;
@@ -175,66 +178,49 @@ h2 {
   margin-left: 20px;
 }
 
-.study-active {
-  color: #B3FD78;
-  border: 1px solid #B3FD78;
-  display: inline-block;
-  width: 175px;
-  height: 80px;
-  text-align: center;
-  padding: 5px 15px;
-  margin: 0;
+.study-active,
+.meditate-active,
+.exercise-active {
   background: transparent;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  height: 80px;
+  margin: 0;
+  outline: none;
+  padding: 5px 15px;
+  text-align: center;
+  width: 175px;
+}
+
+.study-active {
+  border: 1px solid #B3FD78;
+  color: #B3FD78;
 }
 
 .meditate-active {
-  color: #C278FD;
   border: 1px solid #C278FD;
-  display: inline-block;
-  width: 175px;
-  height: 80px;
-  text-align: center;
-  padding: 5px 15px;
-  margin: 0;
-  background: transparent;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
-  border-radius: 5px;
+  color: #C278FD;
 }
 
 .exercise-active {
-  color: #FD8078;
   border: 1px solid #FD8078;
-  display: inline-block;
-  width: 175px;
-  height: 80px;
-  text-align: center;
-  padding: 5px 15px;
-  margin: 0;
-  background: transparent;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
-  border-radius: 5px;
+  color: #FD8078;
 }
 
 .timer-button {
-  border: 4px solid #FFF;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  background: transparent;
-  color: #FFF;
-  font-size: 30px;
-  cursor: pointer;
-  justify-content: center;
   align-content: center;
+  background: transparent;
+  border: 4px solid #FFF;
+  border-radius: 50%;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 30px;
+  height: 200px;
+  justify-content: center;
   outline: none;
+  width: 200px;
 }
 
 .warning {
@@ -250,52 +236,37 @@ h2 {
   visibility: hidden;
 }
 
+.study-timer,
+.meditate-timer,
+.exercise-timer {
+  align-content: center;
+  background: transparent;
+  border-radius: 50%;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 30px;
+  height: 250px;
+  justify-content: center;
+  outline: none;
+  width: 250px;
+}
+
 .study-timer {
   border: 4px solid #B3FD78;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background: transparent;
-  color: #FFF;
-  font-size: 30px;
-  cursor: pointer;
-  justify-content: center;
-  align-content: center;
-  outline: none;
 }
 
 .meditate-timer {
   border: 4px solid #C278FD;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background: transparent;
-  color: #FFF;
-  font-size: 30px;
-  cursor: pointer;
-  justify-content: center;
-  align-content: center;
-  outline: none;
 }
 
 .exercise-timer {
   border: 4px solid #FD8078;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background: transparent;
-  color: #FFF;
-  font-size: 30px;
-  cursor: pointer;
-  justify-content: center;
-  align-content: center;
-  outline: none;
 }
 
 .flex-start-timer-button {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .accomplish-input-container {
@@ -305,11 +276,11 @@ h2 {
 }
 
 .running-time {
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 10px;
   text-align: center;
-    display: inline-block;
-    margin: 10px;
-    font-size: 50px;
-    font-weight: bold;
 }
 
 .accomplish-output {
