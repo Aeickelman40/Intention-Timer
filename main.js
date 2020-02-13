@@ -22,6 +22,9 @@ var timerButton = document.querySelector('.timer-button');
 var categorySelected;
 var categoryContainer = document.querySelector('.flex-activity');
 var logButton = document.querySelector('.log-button');
+var completedActivityPage = document.querySelector('.completed-activity-page');
+var timer = document.querySelector('.timer-button');
+var logButton = document.querySelector('.log-button');
 
 categoryContainer.addEventListener('click', activityClick);
 buttonStudy.addEventListener('click', studyClick);
@@ -31,8 +34,9 @@ buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 timerButton.addEventListener('click', timerStart);
+logButton.addEventListener('click', toCompletedActivityPage);
 
-// attemp to refactor our activity click buttons. This is not our best work :)
+// attempt to refactor our activity click buttons. This is not our best work :)
 function activityClick(event) {
   if (event.target.classList.contains('study')) {
     studyClick();
@@ -104,8 +108,6 @@ function startActivityClick() {
   displayCurrent();
 }
 
-var timer = document.querySelector('.timer-button');
-
 buttonStudy.onclick = function() {
   categorySelected = 'study'
   console.log(categorySelected)
@@ -139,7 +141,6 @@ function displayCurrent() {
   }
 }
 
-
 function toNewPage() {
   if (accomplishInput.value && minutesInput.value && secondsInput.value) {
     minutes = Number(minutesInput.value);
@@ -148,8 +149,6 @@ function toNewPage() {
     currentActivityPage.classList.remove('hide');
   }
 }
-
-var logButton = document.querySelector('.log-button');
 
 function timerStart() {
   function timer() {
@@ -185,4 +184,9 @@ function timerStart() {
     }, 1000);
   }
   timer();
+}
+
+function toCompletedActivityPage() {
+  currentActivityPage.classList.add('hide');
+  completedActivityPage.classList.remove('hide');
 }
