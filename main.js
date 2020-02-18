@@ -20,24 +20,34 @@ var accomplishOutput = document.querySelector('.accomplish-output');
 var accomplishButton = document.querySelector('.start-button');
 var timerButton = document.querySelector('.timer-button');
 var categorySelected;
-var categoryContainer = document.querySelector('.flex-activity');
+var buttonsContainer = document.querySelector('.buttons-container');
 var logButton = document.querySelector('.log-button');
 var completedActivityPage = document.querySelector('.completed-activity-page');
 var timer = document.querySelector('.timer-button');
 var logButton = document.querySelector('.log-button');
+var minutes = 0;
+var seconds = 0;
+var timerContainer = document.querySelector('.running-time');
 
-categoryContainer.addEventListener('click', activityClick);
-buttonStudy.addEventListener('click', studyClick);
-buttonMeditate.addEventListener('click', meditateClick);
-buttonExercise.addEventListener('click', exerciseClick);
+buttonsContainer.addEventListener('click', function(event) {
+  activityClick(event);
+});
 buttonStartActivity.addEventListener('click', startActivityClick);
 secondsInput.addEventListener("keydown", acceptNumbersOnly);
 minutesInput.addEventListener("keydown", acceptNumbersOnly);
 timerButton.addEventListener('click', timerStart);
 logButton.addEventListener('click', toCompletedActivityPage);
 
-// attempt to refactor our activity click buttons. This is not our best work :)
 function activityClick(event) {
+  buttonMeditate.classList.remove('meditate-active');
+  buttonMeditate.classList.add('activity-category');
+  buttonStudy.classList.remove('study-active');
+  buttonStudy.classList.add('activity-category');
+  buttonExercise.classList.remove('exercise-active');
+  buttonExercise.classList.add('activity-category');
+  studyImage.src = "assets/study.svg";
+  exerciseImage.src = "assets/exercise.svg";
+  meditateImage.src = "assets/meditate.svg";
   if (event.target.classList.contains('study')) {
     studyClick();
   }
@@ -48,7 +58,6 @@ function activityClick(event) {
     exerciseClick();
   }
 }
-//
 
 function acceptNumbersOnly(event) {
   if (event.keyCode === 69) {
@@ -59,36 +68,19 @@ function acceptNumbersOnly(event) {
 function studyClick() {
   buttonStudy.classList.add('study-active');
   buttonStudy.classList.remove('activity-category');
-  buttonMeditate.classList.remove('meditate-active');
-  buttonMeditate.classList.add('activity-category');
-  buttonExercise.classList.remove('exercise-active');
-  buttonExercise.classList.add('activity-category');
   studyImage.src = "assets/study-active.svg";
-  meditateImage.src = "assets/meditate.svg";
-  exerciseImage.src = "assets/exercise.svg";
+
 }
 
 function meditateClick() {
   buttonMeditate.classList.add('meditate-active');
   buttonMeditate.classList.remove('activity-category');
-  buttonExercise.classList.remove('exercise-active');
-  buttonExercise.classList.add('activity-category');
-  buttonStudy.classList.remove('study-active');
-  buttonStudy.classList.add('activity-category');
-  studyImage.src = "assets/study.svg";
   meditateImage.src = "assets/meditate-active.svg";
-  exerciseImage.src = "assets/exercise.svg";
 }
 
 function exerciseClick() {
   buttonExercise.classList.add('exercise-active');
   buttonExercise.classList.remove('activity-category');
-  buttonStudy.classList.remove('study-active');
-  buttonStudy.classList.add('activity-category');
-  buttonMeditate.classList.remove('meditate-active');
-  buttonMeditate.classList.add('activity-category');
-  meditateImage.src = "assets/meditate.svg";
-  studyImage.src = "assets/study.svg";
   exerciseImage.src = "assets/exercise-active.svg";
 }
 
@@ -125,9 +117,6 @@ buttonExercise.onclick = function() {
   console.log(categorySelected)
   timer.classList.add('exercise-timer')
 }
-
-var minutes = 0;
-var seconds = 0;
 
 function displayCurrent() {
   accomplishOutput.innerText = accomplishInput.value;
@@ -177,9 +166,9 @@ function timerStart() {
       } else if (seconds === 0 && minutes === 0) {
         clearInterval(timer);
         timerButton.value = 'COMPLETE!'
-        window.alert('times up!')
+        // window.alert('times up!')
         logButton.classList.remove('hide');
-        console.log('over');
+        timerContainer.innerText = "WAY TO GO!";
       }
     }, 1000);
   }
